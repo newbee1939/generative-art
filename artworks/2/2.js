@@ -1,12 +1,15 @@
 // ユークリッドの互除法を実行するプログラム
+const execute = (a, b) => {
+  // 余り(最初はbが入る)
+  let d = b;
+  
+  while (d > 0) {
+    d = a % b;
+    a = b;
+    b = d;
+  }
 
-const execute = (a, b) =>  {
-    const first = a % b;
-    return first;
+  return a;
 }
 
 module.exports = execute;
-
-execute(14803, 12707);
-// 答えは131になる想定
-// 10と6だと2になる
