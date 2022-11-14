@@ -1,5 +1,6 @@
 const execute = require('./2');
 
+// データプロバイダ
 describe('2.js', () => {
   describe.each([
     [9, 6, 3],

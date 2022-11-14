@@ -1,3 +1,8 @@
+color col; // 色のための変数
+// コンピュータで色を表示するための形式
+// ProcessingはデフォルトでRGBだが、色の明るさや彩度を保ったまま色を変えるにはHSB形式の方が扱いやすい
+colorMode(HSB, 1); // 01区間をパラメータとするHSB色形式を使用
+
 // 横縦比がnumA:numBの長方形を正方形によって分割
 int numA = 10;
 int numB = 6;
@@ -13,18 +18,20 @@ int yPos = 0; // 正方形のy位置（初期値0）
 int itr = 0; // 分割の繰り返し回数（初期値0）
 
 // 描画
-size(500, 500); // 描画ウインドウサイズ
+size(500, 300); // 描画ウインドウサイズ
 
 while (wd > 0) { // 幅が0になるまで以下を実行する
   itr++;
   if (itr % 2 == 1) { // 繰り返し回数が奇数のとき、x軸方向へ正方形を増やす
     while(xPos + wd <= numA){ // 幅を足したとき、長方形を超えなければ以下を実行
+      fill(color(random(1), 1, 1)); // 色相のみを01区間でランダムに変えて塗りつぶす
       rect(xPos, yPos, wd, wd); // (xPos, yPos)を左上の頂点とする1辺wdの正方形を描画
       xPos += wd; // x位置を更新
     }
     wd = numA - xPos; // 幅を更新
   } else { // 繰り返し回数が偶数のとき、y軸方向へ正方形を加える
     while(yPos + wd <= numB){ // 幅を足したとき、長方形を超えなければ以下を実行
+      fill(color(random(1), 1, 1));
       rect(xPos, yPos, wd, wd); // (xPos, yPos)を左上の頂点とする1辺wdの正方形を描画
       yPos += wd; // y位置を更新
     }
