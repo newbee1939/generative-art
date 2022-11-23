@@ -6,8 +6,8 @@
 int numA = 10;
 int numB = 6;
 float ratio = (float) numB / numA; // 比率
-int xPos = 0; 
-int yPos = 0; 
+float xPos = 0; 
+float yPos = 0; 
 int itr = 0; 
 
 // 描画
@@ -36,3 +36,5 @@ while (wd > 0.1) { // 幅が許容誤差より大きければ以下を実行す�
     wd = width - yPos;
   }
 }
+
+// ※
